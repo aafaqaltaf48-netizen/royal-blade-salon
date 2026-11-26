@@ -1,5 +1,6 @@
 import {useEffect,useMemo,useState} from 'react';
 import {createClient} from '@supabase/supabase-js';
+import InstallBanner from './InstallBanner';
 import {ArrowUpRight,CalendarDays,CalendarOff,CheckCircle2,ChevronRight,Clock,Crown,LogOut,MapPin,MessageCircle,Phone,Plus,Scissors,Settings,ShieldCheck,X} from 'lucide-react';
 
 type Tab='home'|'services'|'book'|'login'|'owner';
@@ -143,6 +144,7 @@ export default function App(){
  return <div className="app">
   <header><div className="brand" onClick={()=>setTab('home')}><div className="mark"><Crown size={24}/></div><div><div className="brandname">ROYAL BLADE</div><small>SALON · SOGAM, LOLAB</small></div></div><button className="ownerlink" onClick={()=>setTab(isOwner?'owner':'login')}><Settings size={17}/> Owner</button></header>
 
+ <InstallBanner/>
  {tab==='home'&&<><div className="location"><MapPin size={16}/> Sogam, Lolab, Kupwara <span>• BY APPOINTMENT</span></div><section className="hero"><img src="/hero-barber.png" alt="Barber shaping a precision fade haircut"/><div className="shade"/><div className="herotext"><p className="eyebrow">A CUT ABOVE THE ORDINARY</p><h1>Royal Blade Salon.<br/><em>Your signature style.</em></h1><p>Precision cuts. Refined grooming.<br/>A little time for yourself, a lasting impression.</p><button className="goldbtn" onClick={()=>setTab('book')}>BOOK AN APPOINTMENT <ArrowUpRight size={17}/></button></div></section><div className="perks"><div><Scissors/><b>Expert craftsmanship</b><small>Every detail considered</small></div><div><ShieldCheck/><b>Hygiene comes first</b><small>Fresh tools. Complete care.</small></div><div><CalendarDays/><b>Your time, respected</b><small>Easy appointments</small></div></div><section className="section"><div className="eyebrow">THE GROOMING COLLECTION</div><div className="sectionhead"><h2>Our signature services</h2><button className="textbtn" onClick={()=>setTab('services')}>View all ↗</button></div><div className="servicegrid">{active.slice(0,3).map(s=><ServiceCard key={s.id} s={s} choose={()=>{setSelected(s.id);setTab('book')}}/>)}</div></section><section className="visit"><div><div className="eyebrow">YOUR NEIGHBOURHOOD. YOUR SALON.</div><h2>A royal experience,<br/>close to home.</h2><p>Sogam, Lolab, Kupwara, Jammu &amp; Kashmir, India</p><a href={`tel:+91${PHONE}`}><Phone size={16}/> Call salon</a> <a href={whatsapp}><MessageCircle size={16}/> WhatsApp</a></div><div className="visitnote"><span className="visitline"/><b>ROYAL BLADE SALON</b><small>PRECISION · STYLE · CRAFT</small><span className="visitline"/></div></section></>}
 
  {tab==='services'&&<section className="section page"><div className="eyebrow">THE GROOMING COLLECTION</div><h1 className="pagetitle">Find your signature.</h1><div className="servicegrid">{active.map(s=><ServiceCard key={s.id} s={s} choose={()=>{setSelected(s.id);setTab('book')}}/>)}</div></section>}
