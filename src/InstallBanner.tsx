@@ -23,13 +23,13 @@ export default function InstallBanner(){
 
  const install=async()=>{
   if(evt){await evt.prompt();setEvt(null);return}
-  alert('Chrome ke menu (⋮) mein "Install app" ya "Add to Home screen" chunein.');
+  alert('In the Chrome menu (⋮), tap "Install app" or "Add to Home screen".');
  };
 
  return <div style={{margin:'12px 16px',padding:'12px 14px',borderRadius:12,background:'linear-gradient(135deg,#1a0a0d,#2a0f14)',border:'1px solid #c9a24a',color:'#f5ecd7',display:'flex',alignItems:'center',gap:10}}>
   <div style={{flex:1,fontSize:14,lineHeight:1.4}}>
-   <b style={{color:'#e0b75a'}}>Royal Blade ki app download karein</b>
-   <div style={{fontSize:12,opacity:0.85}}>{ios?'Safari mein neeche Share (↑) button dabayein, phir "Add to Home Screen" chunein.':'Home screen par app ki tarah rakhein, tez aur aasan booking ke liye.'}</div>
+   <b style={{color:'#e0b75a'}}>Download the Royal Blade app</b>
+   <div style={{fontSize:12,opacity:0.85}}>{ios?'In Safari, tap the Share button (↑), then choose "Add to Home Screen".':'Add it to your home screen for faster bookings.'}</div>
   </div>
   {!ios&&<button onClick={install} style={{background:'#c9a24a',color:'#1a0a0d',border:'none',borderRadius:8,padding:'8px 12px',fontWeight:700,cursor:'pointer'}}>Download</button>}
   <button onClick={()=>setShow(false)} aria-label="Close" style={{background:'transparent',color:'#f5ecd7',border:'none',fontSize:18,cursor:'pointer'}}>×</button>
