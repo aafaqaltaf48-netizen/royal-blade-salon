@@ -67,3 +67,4 @@
 .s2-customer{border-top:1px solid #34312b;padding:13px 0;display:grid;gap:3px}.s2-customer>div{display:grid;gap:4px}.s2-customer b{font-size:13px}.s2-customer small{font-size:10px;color:#999}.s2-customer label{margin:8px 0}.s2-customer textarea{font-size:12px}
 .s2-export{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}.s2-export>div{flex:1;min-width:190px}.s2-export .s2-primary{margin:0}.s2-export .s2-muted{flex-basis:100%;margin:0}
 @media(max-width:520px){.s2-card{padding:15px}.s2-metrics-wide{grid-template-columns:repeat(2,minmax(0,1fr))}.s2-small-form{grid-template-columns:repeat(2,minmax(0,1fr))}.s2-history b{max-width:205px}.s2-export .s2-primary{width:100%}.s2-mapping label{grid-template-columns:minmax(80px,1fr) 62px;}.s2-mapping label small{grid-column:2}.s2-product-head b{font-size:12px}}
+.s2-text{display:block;font-size:13px;padding:11px 0;margin:2px 0}
